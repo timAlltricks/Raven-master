@@ -1,0 +1,9 @@
+{{#if poem}}
+	<h2>Are you sure you want to delete <i>{{poem.title}}</i>?
+	<form action="/delete/{{poem._id}}" method="post">
+		<input type="submit" value="Yes">
+	</form>
+	<a href="/poem/{{poem._id}}"><input type="button" value="No"></a>
+{{else}}
+	<h2>this poem does not belong to you.</h2>
+{{/if}}

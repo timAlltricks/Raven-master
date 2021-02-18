@@ -1,0 +1,21 @@
+<h2 id="username">{{user.username}}</h2>
+<p id="description">{{user.description}}</p>
+
+{{#if follow_block}}
+	<form action="/{{button.url}}/@{{user.username}}" method="post">
+		<input type="submit" value="{{button.value}}">
+	</form>
+{{/if}}
+
+{{#groupeach 3 poems}}
+	{{#each this}}
+		<div class="card">
+			<a class="cardlink" href="/poem/{{this._id}}">
+				<h5>"{{this.title}}" - {{this.author.username}}</h5>
+				<div class="fade">
+					<p >{{this.preview}}</p>
+				</div>
+			</a>
+		</div>
+	{{/each}}
+{{/groupeach}}
